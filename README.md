@@ -1,5 +1,5 @@
 # SlidingPaneLayout
-Supporting right to left and left to right 
+Supporting right to left
 
 ![Img](https://raw.githubusercontent.com/hanihashemi/SlidingPaneLayout/master/screen_shot/sample.gif)
 
@@ -24,3 +24,21 @@ Usage:
 </io.github.hanihashemi.slidingpanelayoutlib.SlidingPaneLayout>
 ```
 
+# Installing
+
+Step 1:Add the JitPack repository to your build file
+```gradle
+allprojects {
+		repositories {
+			...
+			maven { url "https://jitpack.io" }
+		}
+	}
+```
+
+Step 2:Add the dependency
+```gradle
+dependencies {
+	        compile 'com.github.hanihashemi:SlidingPaneLayout:1.0'
+	}
+```

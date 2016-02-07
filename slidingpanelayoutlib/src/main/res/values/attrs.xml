@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SlidingPaneLayout">
+        <attr name="align" format="enum">
+            <enum name="right_to_left" value="0" />
+            <enum name="left_to_right" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

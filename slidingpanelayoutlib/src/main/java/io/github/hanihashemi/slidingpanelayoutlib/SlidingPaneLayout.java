@@ -74,6 +74,7 @@ public class SlidingPaneLayout extends ViewGroup {
      * be visible in the open state to allow for a closing drag.
      */
     private final int mOverhangSize;
+    private boolean enable = true;
     private final ViewDragHelper mDragHelper;
     private final Rect mTmpRect = new Rect();
     private final ArrayList<DisableLayerRunnable> mPostedRunnables =
@@ -662,6 +663,8 @@ public class SlidingPaneLayout extends ViewGroup {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        if (!enable)
+            return false;
         final int action = MotionEventCompat.getActionMasked(ev);
 
         // Preserve the open state based on the last view that was touched.
@@ -720,8 +723,14 @@ public class SlidingPaneLayout extends ViewGroup {
         return interceptForDrag || interceptTap;
     }
 
+    public void setEnable(boolean value) {
+        this.enable = value;
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
+        if (!enable)
+            return false;
         if (!mCanSlide) {
             return super.onTouchEvent(ev);
         }
